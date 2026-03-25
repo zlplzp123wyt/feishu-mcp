@@ -14,6 +14,8 @@ import { docCreateTool } from "./tools/doc-create.js";
 import { docListTool } from "./tools/doc-list.js";
 import { messageSendTool } from "./tools/message-send.js";
 import { wikiSearchTool } from "./tools/wiki-search.js";
+import { calendarCreateTool } from "./tools/calendar-create.js";
+import { bitableTool } from "./tools/bitable.js";
 
 function log(...args: unknown[]): void {
   console.error("[feishu-mcp]", ...args);
@@ -32,7 +34,7 @@ if (!appId || !appSecret) {
 // --- 创建 MCP Server ---
 const server = new McpServer({
   name: "feishu-mcp",
-  version: "0.1.0",
+  version: "0.2.0",
 });
 
 // --- 注册 Tools ---
@@ -43,6 +45,8 @@ const tools = [
   docListTool,
   messageSendTool,
   wikiSearchTool,
+  calendarCreateTool,
+  bitableTool,
 ];
 
 for (const tool of tools) {
